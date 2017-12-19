@@ -16,14 +16,14 @@ class CreateBugReportsTable extends Migration
         Schema::create('bug_reports', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->string('title', 255);
+            $table->string('title');
             $table->text('description');
-            $table->string('img_url', 255);
+            $table->string('img_url');
             $table->integer('votes');
             $table->tinyInteger('status');
             $table->timestamp('created_at');
 
-//            $table->index('title');
+            $table->index('title');
             $table->index('created_at');
             $table->index('votes');
 
