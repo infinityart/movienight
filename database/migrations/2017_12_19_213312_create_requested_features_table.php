@@ -15,7 +15,7 @@ class CreateRequestedFeaturesTable extends Migration
     {
         Schema::create('requested_features', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
+            $table->integer('user_id')->unsigned();
             $table->string('title', 255);
             $table->text('description');
             $table->string('img_url', 255)->nullable();

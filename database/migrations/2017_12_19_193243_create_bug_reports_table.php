@@ -14,8 +14,9 @@ class CreateBugReportsTable extends Migration
     public function up()
     {
         Schema::create('bug_reports', function (Blueprint $table) {
+            echo 'bug';
             $table->increments('id');
-            $table->integer('user_id');
+            $table->integer('user_id')->unsigned();
             $table->string('title', 255);
             $table->text('description');
             $table->string('img_url', 255);
