@@ -23,7 +23,7 @@ class CreateBugReportsTable extends Migration
             $table->tinyInteger('status');
             $table->timestamp('created_at');
 
-            $table->index('title');
+//            $table->index('title');
             $table->index('created_at');
             $table->index('votes');
 
