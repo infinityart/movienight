@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBugReportsTable extends Migration
+class CreateRequestedFeaturesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateBugReportsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bug_reports', function (Blueprint $table) {
-            $table->increments('id', 10);
+        Schema::create('requested_features', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('user_id', 10);
             $table->string('title', 255);
             $table->text('description');
-            $table->string('img_url', 255);
+            $table->string('img_url', 255)->nullable();
             $table->integer('votes', 10);
             $table->tinyInteger('status', 1);
             $table->timestamp('created_at');
@@ -38,6 +38,6 @@ class CreateBugReportsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bug_reports');
+        Schema::dropIfExists('requested_features');
     }
 }
