@@ -18,3 +18,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/profile/{username}', 'UserController@profile');
+Route::get('/settings', 'UserController@settings')->middleware('auth');
